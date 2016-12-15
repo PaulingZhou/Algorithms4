@@ -2,7 +2,6 @@ package chapter1;
 
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
-import edu.princeton.cs.algs4.StdRandom;
 
 public class Q1_1_3 {
 	public static void main(String[] args) {
