@@ -1,9 +1,6 @@
 package q1_3_33;
 
-import java.util.Arrays;
-
 import edu.princeton.cs.algs4.StdOut;
-import q_1_3_30.Node;
 
 @SuppressWarnings("unchecked")
 public class ResizingArrayDeque<Item> {
