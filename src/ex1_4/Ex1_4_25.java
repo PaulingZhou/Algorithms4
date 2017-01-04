@@ -7,6 +7,7 @@ public class Ex1_4_25 {
 			this.expNum = expNum;
 			this.floor = floor;
 		}
+		@SuppressWarnings("unused")
 		int expNum;
 		int brkNum;
 		int floor;
