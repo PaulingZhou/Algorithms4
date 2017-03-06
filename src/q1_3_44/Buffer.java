@@ -33,7 +33,7 @@ public class Buffer {
 		leftCursor.push(c);
 	}
 	
-	public char delete() {
+	public Character delete() {
 		return leftCursor.isEmpty() ? null : leftCursor.pop();
 	}
 	
