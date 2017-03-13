@@ -1,4 +1,5 @@
 Test.java
 *.class
 .DS_Store
-/bin/
+bin/
+case_example/

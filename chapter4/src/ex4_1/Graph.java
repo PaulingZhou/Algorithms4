@@ -30,6 +30,14 @@ public class Graph {
         }
     }
 
+    public Graph(Graph G) {
+        this(G.V());
+        this.E = G.E();
+        for(int i = 0; i < V; i++) {
+            for(int j : G.adj(i)) addEdge(i, j);
+        }
+    }
+
     public int E() {
         return E;
     }
@@ -46,4 +54,11 @@ public class Graph {
     public Iterable<Integer> adj(int v) {
         return adj[v];
     }
+
+    public boolean hasEdge(int v, int w) {
+        for(int i : adj[v])
+            if(i == w) return true;
+        return false;
+    }
+
 }
