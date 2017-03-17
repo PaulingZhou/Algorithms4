@@ -11,10 +11,14 @@ public class Digraph {
     private final int V;
     private int E;
     private Bag<Integer>[] adj;
+    private boolean[] onStack;
+    private boolean[] marked;
 
     public Digraph(int v) {
         V = v;
         E = 0;
+        onStack = new boolean[V];
+        marked = new boolean[V];
         adj = (Bag<Integer>[]) new Bag[V];
         for (int i = 0; i < V; i++) adj[i] = new Bag<>();
     }
@@ -60,6 +64,23 @@ public class Digraph {
     public boolean hasEdge(int v, int w) {
         for(int i : adj[v]) if(w == i) return true;
         return false;
+    }
+
+    public boolean isTopoLogical() {
+        for(int i = 0; i < V; i++) {
+            if(!isTopoLogical(i)) return false;
+        }
+        return true;
+    }
+
+    private boolean isTopoLogical(int v) {
+        if(onStack[v]) return false;
+        if(marked[v]) return true;
+        marked[v] = true;
+        onStack[v] = true;
+        for(int i : adj[v]) if(!marked[v]) isTopoLogical(i);
+        onStack[v] = false;
+        return true;
     }
 
 
